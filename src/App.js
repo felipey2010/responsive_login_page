@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from "react";
+import { AppContext } from "./utils/Context";
+import login from "./images/login.svg";
+import LoginComponent from "./components/LoginComponent";
+import SignUpComponent from "./components/SignUpComponent";
 
 function App() {
+  const { toggleLogin, setToggleLogin } = useContext(AppContext);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <div className="top-div">
+          <p onClick={() => setToggleLogin(!toggleLogin)}>
+            {toggleLogin ? "Login" : "Register"}
+          </p>
+        </div>
+
+        <div className="middle-div">
+          <img src={login} alt="login" />
+
+          <p>
+            {toggleLogin ? "Create your account" : "Log in to your account"}
+          </p>
+        </div>
+
+        {toggleLogin ? <SignUpComponent /> : <LoginComponent />}
+      </div>
     </div>
   );
 }

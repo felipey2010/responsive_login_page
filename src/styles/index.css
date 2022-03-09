@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+
+:root {
+  --primary: #dd4136;
+  --secondary: #4e4e4e;
+  --background-color: #100816;
+  --text-color: rgba(255, 255, 255, 0.7);
+  --button-hover: #c53328;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.container {
+  width: 35vw;
+  height: 80vh;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.8)
+  );
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.top-div {
+  width: 75%;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.top-div p {
+  color: var(--primary);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0 4px;
+}
+
+.middle-div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.middle-div img {
+  width: 50%;
+  margin: 8px;
+}
+
+.middle-div p {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 2ch;
+  font-weight: 500;
+  margin-right: 4px;
+  margin-left: 4px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.input-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+}
+
+.input-div input {
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  outline: none;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.input-div input:focus {
+  border: 1px solid var(--primary);
+}
+
+.button-div {
+  width: 75%;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.button-div button {
+  width: 65%;
+  font-size: 16px;
+  background-color: var(--primary);
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-div button:hover {
+  background-color: var(--button-hover);
+}
+
+.button-div span {
+  height: 90%;
+  cursor: pointer;
+}
+
+.button-div span img {
+  height: 100%;
+}
+
+.modal-container {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-inner-container {
+  width: 25vw;
+  height: 50vh;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.8)
+  );
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close-btn-div {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.close-btn-div svg {
+  height: 28px;
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  font-size: 24px;
+  margin: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.close-btn-div svg:hover {
+  color: rgba(0, 0, 0, 1);
+  transform: scale(1.2);
+}
+
+.modal-inner-container h3 {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 8px 4px;
+  text-align: center;
+}
+
+.modal-inner-container p {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 8px 4px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.print-div {
+  width: 50%;
+  text-align: center;
+}
+
+.print-div img {
+  height: 50px;
+}
+
+.loader-div {
+  height: 65px;
+  width: 65px;
+}
+
+.confirmation-div {
+  width: 50%;
+  height: 75px;
+  text-align: center;
+}
+
+.confirmation-div svg {
+  border: 4px solid rgba(0, 0, 0, 0.7);
+  font-size: 32px;
+  padding: 8px;
+  border-radius: 50%;
+  width: 100%;
+  height: auto;
+}
+
+.confirmation-div .failed {
+  color: red;
+}
+
+.confirmation-div .success {
+  color: green;
+}
+
+@media (max-width: 950px) {
+  .container {
+    width: 55vw;
+  }
+
+  .modal-inner-container {
+    width: 45vw;
+  }
+}
+
+@media (max-width: 680px) {
+  .container {
+    width: 65vw;
+  }
+
+  .modal-inner-container {
+    width: 55vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 80vw;
+  }
+
+  .modal-inner-container {
+    width: 75vw;
+  }
+}
